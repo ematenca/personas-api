@@ -1,9 +1,8 @@
-Desarrollo de API REST en C# .Net Core 6 para administrar personas
+Se desarrolló una API REST en C# .NET Core 6 para administrar personas. El proyecto se basa en la implementación de funciones esenciales, incluyendo 3 funciones GET, 1 función DELETE y 1 función POST.
 
-En el proyecto actual se implemento lo necesario para administrar una API REST basica que cuenta con 3 funciones get, 1 delete y 1 post.
+El desarrollo se centró en seguir el patrón de diseño de IoC (Inversión de Control) y DI (Inyección de Dependencias), utilizando la abstracción de la interfaz en el controlador a través del patrón de repositorio. Posteriormente, se registró y especificó la referencia en el contenedor de dependencias de .NET.
 
-Se desarrollo principalmente siguiendo el patrón de diseño de IoC (Inversión de control) y DI (Inyección de dependencias), utilizando la abstraccion de la interfaz en el controlador a traves del patrón de repositorio y luego registrando y especificando la referencia de la misma en el contenedor de dependecias de .NET
+Además, se utilizó Entity Framework para gestionar la conexión con la base de datos, las migraciones y el mapeo de las tablas a los modelos correspondientes.
 
-Ademas se utilizo Entity Framework para gestionar la conexion, las migraciones y el mapeo de las tablas a los modelos.
+Como funcionalidad adicional, se implementó un método POST con validaciones a nivel de base de datos y modelo, lo que garantiza que solo se puedan ingresar caracteres válidos al ejecutar la operación POST.
 
-Como funcionalidad extra se implemento un metodo post con una validacion a nivel de la base de datos y del modelo para que solo se puedan escribir caracteres al momento de ejecutar el post.
