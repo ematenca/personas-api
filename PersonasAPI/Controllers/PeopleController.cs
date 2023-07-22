@@ -25,6 +25,23 @@ namespace PersonasAPI.Controllers
             return Created($"/api/people/{person.Id}", person);
         }
 
+        [HttpPut("{id}")]
+        public async Task<ActionResult> UpdatePerson(int id, Person updatedPerson)
+        {
+            if (updatedPerson == null || id != updatedPerson.Id)
+                return BadRequest();
+
+            var existingPerson = await _personRepository.GetPersonById(id);
+            if (existingPerson == null)
+                return NotFound();
+
+            existingPerson.Name = updatedPerson.Name;
+
+            await _personRepository.UpdatePerson(existingPerson);
+
+            return NoContent();
+        }
+
         [HttpGet]
         public async Task<IEnumerable<Person>> GetPeople()
         {

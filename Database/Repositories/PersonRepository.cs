@@ -18,6 +18,12 @@ namespace Database.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task UpdatePerson(Person person)
+        {
+            _context.People.Update(person);
+            await _context.SaveChangesAsync();
+        }
+ 
         public async Task<IEnumerable<Person>> GetPeople()
         {
             return await _context.People.ToListAsync();
@@ -28,6 +34,11 @@ namespace Database.Repositories
             return await _context.People.FindAsync(id);
         }
 
+        public async Task<Person?> GetPersonByName(string name)
+        {
+            return await _context.People.FirstOrDefaultAsync(x => x.Name == name);
+        }
+ 
         public async Task<Person?> GetRandomPerson()
         {
             return await _context.People.OrderBy(x => Guid.NewGuid()).FirstOrDefaultAsync();

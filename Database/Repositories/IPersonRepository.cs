@@ -5,6 +5,7 @@ namespace Database.Repositories
     public interface IPersonRepository
     {
         Task CreatePerson(Person person);
+        Task UpdatePerson(Person person);
         Task<IEnumerable<Person>> GetPeople();
         Task<Person?> GetPersonById(int id);
         Task<Person?> GetRandomPerson();
